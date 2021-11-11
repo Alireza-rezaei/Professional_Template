@@ -1,0 +1,277 @@
+@font-face {
+    font-family: 'sans';
+    src: url('../font/iran_sans_regular_mmrostami.blog.ir-webfont.eot');
+    src: url('../font/iran_sans_regular_mmrostami.blog.ir-webfont.eot?#iefix') format('embedded-opentype'), url('../font/iran_sans_regular_mmrostami.blog.ir-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Akaya";
+    src: url(../font/AkayaKanadaka-Regular.woff);
+    src: url(../font/AkayaKanadaka-Regular.ttf) format(ttf);
+    src: url(../font/AkayaKanadaka-Regular.eot) format(eot);
+    src: url(../font/AkayaKanadaka-Regular.woff2) format(woff2);
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'sans', 'Akaya', Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.9rem;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: #0d62da;
+    text-decoration: none;
+    transition: color .3s ease;
+}
+
+a:hover {
+    color: #e76f51;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+
+@media only screen and (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+@media only screen and (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+@media only screen and (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+
+/* Large devices (laptops/desktops, 992px and up) */
+
+@media only screen and (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+
+@media only screen and (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+}
+
+
+/* Helper  */
+
+
+/* Flex Helper  */
+
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.flex-wrap {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.justify-content-start {
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+}
+
+.justify-content-end {
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+}
+
+.justify-content-center {
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.justify-content-between {
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.justify-content-around {
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+}
+
+.align-items-start {
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+
+.align-items-end {
+    -ms-flex-align: end;
+    align-items: flex-end;
+}
+
+.align-items-center {
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.align-items-baseline {
+    -ms-flex-align: baseline;
+    align-items: baseline;
+}
+
+.align-items-stretch {
+    -ms-flex-align: stretch;
+    align-items: stretch;
+}
+
+
+/* Padding Margin Helper  */
+
+.pb-5 {
+    padding-bottom: 0.5rem;
+}
+
+.pt-5 {
+    padding-top: 0.5rem;
+}
+
+.pr-5 {
+    padding-right: 0.5rem;
+}
+
+.pl-5 {
+    padding-left: 0.5rem;
+}
+
+.pb-10 {
+    padding-bottom: 1rem;
+}
+
+.pt-10 {
+    padding-top: 1rem;
+}
+
+.pr-10 {
+    padding-right: 1rem;
+}
+
+.pl-10 {
+    padding-left: 1rem;
+}
+
+.pb-20 {
+    padding-bottom: 2rem;
+}
+
+.pt-20 {
+    padding-top: 2rem;
+}
+
+.pr-20 {
+    padding-right: 2rem;
+}
+
+.pl-20 {
+    padding-left: 2rem;
+}
+
+.mb-5 {
+    margin-bottom: 0.5rem;
+}
+
+.mt-5 {
+    margin-top: 0.5rem;
+}
+
+.mr-5 {
+    margin-right: 0.5rem;
+}
+
+.ml-5 {
+    margin-left: 0.5rem;
+}
+
+.mb-10 {
+    margin-bottom: 1rem;
+}
+
+.mt-10 {
+    margin-top: 1rem;
+}
+
+.mr-10 {
+    margin-right: 1rem;
+}
+
+.ml-10 {
+    margin-left: 1rem;
+}
+
+.mb-20 {
+    margin-bottom: 2rem;
+}
+
+.mt-20 {
+    margin-top: 2rem;
+}
+
+.mr-20 {
+    margin-right: 2rem;
+}
+
+.ml-20 {
+    margin-left: 2rem;
+}
+
+.hidden {
+    display: none;
+}
