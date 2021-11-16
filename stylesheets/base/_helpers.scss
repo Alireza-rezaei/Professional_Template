@@ -1,110 +1,39 @@
-@font-face {
-    font-family: 'sans';
-    src: url('../font/iran_sans_regular_mmrostami.blog.ir-webfont.eot');
-    src: url('../font/iran_sans_regular_mmrostami.blog.ir-webfont.eot?#iefix') format('embedded-opentype'), url('../font/iran_sans_regular_mmrostami.blog.ir-webfont.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Akaya";
-    src: url(../font/AkayaKanadaka-Regular.woff);
-    src: url(../font/AkayaKanadaka-Regular.ttf) format(ttf);
-    src: url(../font/AkayaKanadaka-Regular.eot) format(eot);
-    src: url(../font/AkayaKanadaka-Regular.woff2) format(woff2);
-}
-
-*,
-*::after,
-*::before {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    font-size: 62.5%;
-}
-
-body {
-    font-family: 'sans', 'Akaya', Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 1.9rem;
-}
-
 .container {
     width: 100%;
     margin: 0 auto;
     padding: 0 auto;
-}
-
-button,
-input,
-select,
-textarea {
-    font-family: inherit;
-}
-
-ul {
-    list-style: none;
-}
-
-a {
-    color: #0d62da;
-    text-decoration: none;
-    transition: color .3s ease;
-}
-
-a:hover {
-    color: #e76f51;
-}
-
-
-/* Extra small devices (phones, 600px and down) */
-
-@media only screen and (min-width: 576px) {
-    .container {
+    @media only screen and (min-width: 576px) {
         max-width: 540px;
     }
-}
-
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-
-@media only screen and (min-width: 768px) {
-    .container {
+    @media only screen and (min-width: 768px) {
         max-width: 720px;
     }
-}
-
-
-/* Medium devices (landscape tablets, 768px and up) */
-
-@media only screen and (min-width: 992px) {
-    .container {
+    @media only screen and (min-width: 992px) {
         max-width: 960px;
     }
-}
-
-
-/* Large devices (laptops/desktops, 992px and up) */
-
-@media only screen and (min-width: 1200px) {
-    .container {
+    @media only screen and (min-width: 1200px) {
         max-width: 1140px;
     }
-}
-
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-
-@media only screen and (min-width: 1400px) {
-    .container {
+    @media only screen and (min-width: 1400px) {
         max-width: 1320px;
     }
 }
 
+.hidden {
+    display: none;
+}
 
-/* Helper  */
+.show-large {
+    @media only screen and (min-width: 993px) {
+        display: block;
+    }
+}
+
+.show-small {
+    @media only screen and (max-width: 992px) {
+        display: block;
+    }
+}
 
 
 /* Flex Helper  */
@@ -270,8 +199,4 @@ a:hover {
 
 .ml-20 {
     margin-left: 2rem;
-}
-
-.hidden {
-    display: none;
 }
