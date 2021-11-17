@@ -1,4 +1,4 @@
-@function path ($file-name) {
+@function image ($file-name) {
     @return url($file-path+'image/'+$file-name);
 }
 

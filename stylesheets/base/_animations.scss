@@ -1,0 +1,41 @@
+@keyframes typewriting {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes typewriting-cursor {
+    0% {
+        border-left-color: transparent;
+    }
+    50% {
+        border-left-color: $color-blue_1;
+    }
+}
+
+@keyframes rocket {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(0, - 6.5rem);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes bergurmenu-color {
+    0% {
+        background-color: $color-blue_2;
+    }
+    50% {
+        background-color: #C81D25;
+    }
+    100% {
+        background-color: $color-blue_2;
+    }
+}

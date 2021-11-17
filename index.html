@@ -1,5 +1,5 @@
-<!DOCTYPE html>
 <html lang="fa" dir="rtl">
+<!DOCTYPE html>
 
 <head>
     <meta charset="UTF-8" />
@@ -11,9 +11,9 @@
 </head>
 
 <body>
-    <!-- Navbar Project -->
+    <!-- Navbar Sections -->
     <div class="navbar">
-        <div class="container pt-20 pb-20 align-content-center justify-content-between flex">
+        <div class="navbar__container container pt-20 pb-20 align-content-center justify-content-between flex">
             <div class="navbar__search-box">
                 <!-- Search Box Structure -->
                 <div class="search">
@@ -25,9 +25,8 @@
                             </button>
                     </form>
                 </div>
-                <!-- End Search Box Structure -->
             </div>
-            <!-- Navbar Nav Project -->
+            <!-- Navbar Nav Sections -->
             <div class="navbar__nav">
                 <div class="nav">
                     <input type="checkbox" class="nav__burger-checkbox" id="burgermenu">
@@ -67,7 +66,7 @@
                                 <div class="nav__mega-conent">
                                     <div class="nav__mega-column">
                                         <img src="image/mega-menu-bg.png" alt="mega menu">
-                                        <a class="nav__button" href="#">سه روز تا پایان تخفیف</a>
+                                        <a class="btn btn__swipe" href="#"><span>سه روز تا پایان تخفیف</span></a>
                                     </div>
                                     <div class="nav__mega-column">
                                         <h4>تمامی دوره ها</h4>
@@ -118,7 +117,6 @@
                     </div>
                 </div>
             </div>
-            <!-- End Navbar Nav Project -->
             <!-- Navbar Logo -->
             <div class="navbar__logo">
                 <a href="/">
@@ -126,18 +124,21 @@
                     <img class="hidden  show-small" src="image/logo-header-small.png" alt="Logo large" srcset="" />
                 </a>
             </div>
-            <!-- End Navbar Logo -->
         </div>
     </div>
-    <!-- End Navbar Project -->
-    <header class="heaader">
-        <div class="header__baneer">
+    <!-- Header Section  -->
+    <header class="header">
+        <div class="header__baneer container">
+            <!-- Header Call To Action Section  -->
             <div class="header__cta">
-                <h1 class="header-intro">آموزش React پیشرفته</h1>
+                <div class="header__wrap">
+                    <h1 class="header-intro">آموزش React پیشرفته</h1>
+                </div>
                 <h2 class="header-subtitle">آموزش React و Redux پروژه محور برای ورود به بازار کار</h2>
-                <h2 class="header-subtitle">آموزش برنامه نویسی علیرضا رضایی</h2>
-                <a href="#" class="btn btn__swipe"></a>
+                <h2 class="header-subtitle">آموزش برنامه نویسی با علیرضا رضایی</h2>
+                <a href="#" class="btn btn__swipe"><span>ورود به دوره ها</span></a>
             </div>
+            <!-- Rocket Section in Header  -->
             <div class="header__rocket-bg">
                 <div class="header__rocket"></div>
             </div>

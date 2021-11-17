@@ -1,10 +1,13 @@
-@mixin Flex($justify-content: false, $align-items: false, $wrap: false) {
+@mixin Flex($justify-content: false, $align-items: false, $flex-direction: false, $wrap: false) {
     display: flex;
     @if ($justify-content) {
         justify-content: $justify-content;
     }
     @if ($align-items) {
         align-items: $align-items;
+    }
+    @if ($flex-direction) {
+        flex-direction: $flex-direction;
     }
     @if ($wrap) {
         flex-wrap: $wrap;

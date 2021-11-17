@@ -1,6 +1,13 @@
 .navbar {
+    &__container {
+        padding-right: .5rem;
+        padding-left: .5rem;
+    }
     &__search-box {
         width: 20rem;
+        &__logo {
+            margin: auto;
+        }
         @media only screen and (max-width: 992px) {
             order: 1;
             width: auto;
@@ -15,6 +22,7 @@
     }
     @media only screen and (max-width: 768px) {
         position: sticky;
+        z-index: 30;
         top: 0;
         box-shadow: 0 0 4px $color-gray_3;
     }

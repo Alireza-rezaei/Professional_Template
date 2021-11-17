@@ -2,6 +2,7 @@
         //l1 Lists ul 
         &__lists {
             position: relative;
+            z-index: 30;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -112,6 +113,7 @@
         //Mega menu 
         &__mega {
             position: static !important;
+            z-index: 3;
             &-conent {
                 position: absolute;
                 left: 0;
@@ -144,7 +146,7 @@
                     padding: 2rem;
                     border-bottom: .3rem solid $color-orange_1;
                 }
-                &>.nav__button {
+                &>.nav__button span {
                     align-self: center;
                 }
             }
@@ -192,6 +194,7 @@
                 border-radius: .5rem;
                 background-color: $color-blue_2;
                 transition: all .5s $cubic-bezier;
+                animation: bergurmenu-color 5s linear infinite;
             }
             & :nth-child(1) {
                 width: 80%;

@@ -1,5 +1,69 @@
-.heaader {
+.header {
+    position: relative;
     width: 100%;
     height: 45rem;
     background-color: $color-green-1;
+    &::after {
+        content: " ";
+        position: absolute;
+        width: 50%;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-image: linear-gradient( 353deg, #d3f4f2, #fff);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%);
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%);
+    }
+    &__wrap {
+        display: inline-block
+    }
+    &__baneer {
+        @include Flex(space-evenly, center);
+        height: 100%;
+    }
+    &__cta {
+        position: relative;
+        z-index: 2;
+        @include Flex(space-evenly, flex-start, column);
+        width: 50%;
+    }
+    &__rocket-bg {
+        @include Flex(center, center);
+        width: 50%;
+        height: 360px;
+        background: image("rocket-bg.png") no-repeat center bottom;
+        background-size: contain;
+    }
+    &__rocket {
+        width: 20%;
+        height: inherit;
+        background: image("rocket.png") no-repeat center bottom;
+        background-size: 100% auto;
+        animation: rocket 5s linear 1s infinite;
+    }
+    @media only screen and (max-width: 992px) {
+        height: 40rem;
+    }
+    @media only screen and (max-width: 768px) {
+        & {
+            padding: 1rem 0;
+            &::after {
+                background: none;
+            }
+        }
+        &__baneer {
+            flex-direction: column;
+        }
+        &__cta {
+            width: 100%;
+            align-items: center;
+        }
+        &__rocket-bg {
+            width: 100%;
+            height: inherit;
+        }
+        &__rocket {
+            width: 12%;
+        }
+    }
 }

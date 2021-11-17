@@ -1,0 +1,44 @@
+.btn {
+    position: relative;
+    padding: 1rem 3rem;
+    overflow: hidden;
+    margin: 1rem;
+    font-size: 1.5rem;
+    font-weight: 900;
+    // border: .1rem solid $color-gray_2;
+    border-radius: 1rem;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 0 4px $color-gray_3;
+    transition: all .3s ease;
+    background-color: $color-orange_2;
+    &__swipe {
+        &>span {
+            position: relative;
+            z-index: 1;
+        }
+        color: $color-white;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: $color-orange_3;
+            color: aliceblue;
+            border-radius: 1rem;
+            transform: scale(0, 1);
+            transition: all .6s ease;
+        }
+        &:hover {
+            color: $color-white;
+            &::after {
+                transform: scale(1, 1);
+            }
+        }
+    }
+    @media only screen and (max-width: 992px) {
+        padding: .8rem 2rem;
+    }
+}
