@@ -7,7 +7,7 @@
     &__box {
         flex-grow: 1;
         @include Box(30, auto);
-        padding: 1rem 2rem;
+        padding: 2rem 2rem;
         margin: 2rem;
         background-color: $color-white;
         box-shadow: 0 8px 16px 0 rgba($color-blue_3, .2);

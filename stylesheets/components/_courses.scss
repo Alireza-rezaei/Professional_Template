@@ -1,0 +1,244 @@
+.course {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    &__box {
+        position: relative;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        width: 34rem;
+        margin: 1.8rem;
+        border: 1px solid $color-gray_1;
+        border-radius: 1rem;
+        @media only screen and (max-width: 362px) {
+            width: 25rem;
+        }
+    }
+    // Rebbon
+    &__rebbon {
+        position: absolute;
+        z-index: 1;
+        top: 1.5rem;
+        right: -1rem;
+        width: 10rem;
+        height: 5rem;
+        pointer-events: none;
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0rem;
+            border: 0.5rem solid #e76f51;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+        }
+        &-text {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            padding: .6rem 0;
+            background-color: $color-orange_1;
+            color: $color-white;
+            text-align: center;
+            border-radius: .5rem;
+            border-bottom-right-radius: 0;
+        }
+    }
+    //Header
+    &__header {
+        position: relative;
+        overflow: hidden;
+        transition: all .3s ease-in-out;
+        border-top-left-radius: .5rem;
+        border-top-right-radius: .5rem;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba( $color-gray_3, .5);
+            transition: all .3s linear;
+            transform: scale(0);
+        }
+        .course__img {
+            display: block;
+            width: 35rem;
+            height: 20rem;
+            border-top-left-radius: .5rem;
+            border-top-left-radius: .5rem;
+            @media only screen and (max-width: 362px) {
+                width: 25rem;
+                height: 15rem;
+            }
+        }
+        &:hover {
+            &::after {
+                transform: scale(1);
+            }
+            .course__details-link {
+                left: 1.8rem;
+                opacity: 1;
+            }
+            .course__social-media svg {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    }
+    &__social-media {
+        position: absolute;
+        bottom: 0;
+        z-index: 1;
+        @include Flex(flex-end, center);
+        padding: .5rem;
+        width: 100%;
+        & svg {
+            font-size: 2.2rem;
+            margin: .5rem;
+            color: $color-white;
+            opacity: 0;
+            transform: scale(1.3);
+            transition: all .3s linear;
+            &:hover {
+                color: $color-orange_1;
+            }
+        }
+        & a:nth-child(2) {
+            margin-right: auto;
+        }
+    }
+    &__details-link {
+        position: absolute;
+        z-index: 1;
+        top: 1rem;
+        left: 1rem;
+        color: $color-white;
+        opacity: 0;
+        transition: all .3s ease;
+    }
+    //Body
+    &__body {
+        padding: 1rem;
+    }
+    &__details {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        font-size: 1.8rem;
+        padding: 1rem;
+        & span {
+            display: flex;
+            align-items: center;
+        }
+        & svg {
+            color: $color-blue_1;
+            font-size: 1.8rem;
+            margin-left: .7rem;
+        }
+    }
+    &__tags {
+        @include Flex();
+        font-size: 1.5rem;
+        white-space: nowrap;
+        @media only screen and (max-width: 576px) {
+            flex-direction: column;
+        }
+        & .course__tag {
+            position: relative;
+            padding: .7rem;
+            margin: 1.6rem 0 0 1.6rem;
+            font-size: 1.3rem;
+            border-top-right-radius: .6rem;
+            border-bottom-right-radius: .6rem;
+            & a {
+                color: $color-white;
+                &:hover {
+                    color: $color-gray_1;
+                }
+            }
+            &::after {
+                content: "";
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                z-index: 1;
+                width: .7rem;
+                height: .7rem;
+                top: 1.3rem;
+                left: -.9rem;
+                border-radius: 50%;
+                background-color: $color-white;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: -1.4rem;
+                border-color: transparent;
+                border-style: solid;
+                border-width: 1.6rem 1.4rem 1.7rem 0;
+            }
+            &--blue {
+                background-color: $color-blue_3;
+                &::after {
+                    border-right-color: $color-blue_3;
+                }
+            }
+            &--green {
+                background-color: $color-green_3;
+                &::after {
+                    border-right-color: $color-green_3;
+                }
+            }
+            &--orange {
+                background-color: $color-orange_1;
+                &::after {
+                    border-right-color: $color-orange_1;
+                }
+            }
+        }
+    }
+    //Footer
+    &__footer {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 2rem;
+        font-size: 1.7rem;
+        border-top: 1px solid $color-gray_1;
+        white-space: nowrap;
+        @media only screen and (max-width: 576px) {
+            flex-direction: column;
+            padding-bottom: 1rem;
+            width: 100%;
+        }
+    }
+    &__stars {
+        display: flex;
+        justify-content: center;
+        direction: ltr;
+        @media only screen and (max-width: 576px) {
+            margin-top: 1rem;
+        }
+    }
+    &__star {
+        color: $color-gold;
+        font-size: 2.3rem;
+        cursor: pointer;
+        &:hover~.course__star {
+            color: $color-gray_3;
+        }
+    }
+    &__price {
+        padding: .5rem;
+        background-color: $color-gray_1;
+        border-radius: .5rem;
+        font-weight: bold;
+    }
+    &__result {
+        padding: .5rem;
+    }
+}
