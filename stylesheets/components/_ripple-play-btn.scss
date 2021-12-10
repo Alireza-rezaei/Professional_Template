@@ -1,0 +1,34 @@
+.ripple-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    @include Flex(center, center);
+    width: 7rem;
+    height: 7rem;
+    font-size: 3rem;
+    color: $color-white;
+    background-color: $color-orange_4;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s ease;
+    &:hover {
+        color: $color-green_1;
+        background-color: $color-red_2;
+    }
+    &::after,
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: .1rem solid $color-orange_4;
+        border-radius: 50%;
+    }
+    &::before {
+        animation: play-wave 2.2s ease-in infinite forwards;
+    }
+    &::after {
+        animation: play-wave 2.2s ease-in .8s infinite forwards;
+    }
+}

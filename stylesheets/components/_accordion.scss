@@ -1,0 +1,69 @@
+.accordion {
+    height: 40rem;
+    margin: 1rem;
+    &__top {
+        @include Flex(space-between, center);
+        padding: 2rem;
+        color: $color-gray_3;
+        background-color: $color-gray_1;
+        border: .1rem solid $color-gray_2;
+        border-radius: .2rem;
+        font-weight: bold;
+        user-select: none;
+        cursor: pointer;
+        & svg {
+            transition: all .3s cubic-bezier(0.65, 0.02, 0.38, 0.98);
+        }
+    }
+    &__bottom {
+        @include Flex(false, center);
+        overflow: hidden;
+        // height: 0;
+    }
+    &__text {
+        position: relative;
+        padding: 1.5rem;
+        width: 90%;
+        text-align: justify;
+    }
+    &__icon {
+        position: relative;
+        width: 10%;
+        font-size: 5rem;
+        opacity: .4;
+    }
+    &__radio {
+        @extend %fade-out;
+        &:checked {
+            +.accordion__label>.accordion__top {
+                &>svg {
+                    transform: rotate(180deg);
+                }
+            }
+            +.accordion__label>.accordion__bottom {
+                height: 10rem;
+                transition: height 0.6s cubic-bezier(0.65, 0.02, 0.38, 0.98);
+            }
+            +.accordion__label .accordion__text {
+                animation: accordion-icon-move-in .6s cubic-bezier(0.65, 0.02, 0.38, 0.98) forwards;
+            }
+            +.accordion__label .accordion__icon {
+                left: 0;
+                transition: left .6s .2s cubic-bezier(0.65, 0.02, 0.38, 0.98);
+            }
+        }
+        &:not(:checked) {
+            +.accordion__label>.accordion__bottom {
+                height: 0;
+                transition: height .5s .2s cubic-bezier(0.65, 0.02, 0.38, 0.98);
+            }
+            +.accordion__label .accordion__text {
+                animation: accordion-icon-move-out .5s cubic-bezier(0.65, 0.02, 0.38, 0.98) forwards;
+            }
+            +.accordion__label .accordion__icon {
+                left: -8rem;
+                transition: all .5s cubic-bezier(0.65, 0.02, 0.38, 0.98);
+            }
+        }
+    }
+}

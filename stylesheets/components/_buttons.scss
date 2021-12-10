@@ -37,7 +37,48 @@
             }
         }
     }
-    @media only screen and (max-width: 992px) {
-        padding: .8rem 2rem;
+    &-swich {
+        color: $color-white;
+        padding: 1.2rem 2rem 1.2rem 4rem;
+        font-size: 1.8rem;
+        &--blue {
+            background-color: $color-blue_3;
+        }
+        &--purple {
+            background-color: $color-purple_1;
+        }
+        &--orange {
+            background-color: $color-orange_1;
+        }
+        &::before {
+            content: "\f3c1";
+            position: absolute;
+            top: 1.3rem;
+            left: 1.3rem;
+            font-size: 2rem;
+            transform: rotateY(.5turn);
+            opacity: 0;
+            transition: all .3s linear;
+        }
+        &::after {
+            content: "\f023";
+            position: absolute;
+            top: 1.3rem;
+            left: 1.3rem;
+            font-size: 2rem;
+            opacity: 1;
+            transition: all .3s linear;
+        }
+        &:hover {
+            color: $color-white;
+            &::after {
+                opacity: 0;
+                transform: rotateY(.5turn);
+            }
+            &::before {
+                opacity: 1;
+                transform: rotateY(0);
+            }
+        }
     }
 }

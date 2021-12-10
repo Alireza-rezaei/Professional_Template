@@ -1,0 +1,165 @@
+    .card {
+        position: relative;
+        overflow: hidden;
+        @include Flex(center, center, column);
+        width: 30rem;
+        background-color: $color-white;
+        border-radius: 1rem;
+        box-shadow: -5px 5px 15px 1px rgba($color: $color-gray_3, $alpha: .1);
+        &:nth-child(2) {
+            margin: 0 1.5rem;
+        }
+        @media only screen and (max-width: 992px) {
+            margin: 2rem 0;
+        }
+        @media only screen and (max-width: 300px) {
+            width: 26rem;
+        }
+        // cards header 
+        &__header {
+            width: 100%;
+            height: 15rem;
+            &--blue {
+                @include bg-gradient($blue-gradient);
+            }
+            &--pink {
+                @include bg-gradient($pink-gradient);
+            }
+            &--orange {
+                @include bg-gradient($orange-gradient);
+            }
+        }
+        .card__cloudes {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 80%;
+            &>* {
+                position: absolute;
+                color: $color-white;
+            }
+            & :nth-of-type(1) {
+                top: 38%;
+                left: 10%;
+                font-size: 7rem;
+                opacity: .8;
+            }
+            & :nth-of-type(2) {
+                top: 50%;
+                left: 77%;
+                font-size: 5rem;
+                opacity: .6;
+            }
+            & :nth-of-type(3) {
+                top: 10%;
+                left: 46%;
+                font-size: 3rem;
+                opacity: .3;
+            }
+        }
+        &__plan-box {
+            position: absolute;
+            top: 9rem;
+            z-index: 2;
+            @include Flex (center, center);
+            width: 7rem;
+            height: 7rem;
+            overflow: hidden;
+            border: .5rem solid $color-gray_1;
+            border-radius: 50%;
+            background-color: $color-white;
+        }
+        &__plan-title {
+            text-align: center;
+        }
+        // Content
+        &__content {
+            @include Flex(center, center);
+            width: 100%;
+            margin-top: -3rem;
+            background-color: #fff;
+            z-index: 1;
+            border: .2rem solid $color-gray_1;
+            border-top-width: .5rem;
+            border-top-right-radius: 2.5rem;
+            border-top-left-radius: 2.5rem;
+        }
+        &__lists {
+            @include Flex(space-around, center, column);
+            opacity: .7;
+            margin: 0 6rem;
+        }
+        &__list {
+            @include Flex(center, center);
+            width: 100%;
+            padding: 1rem;
+            border-bottom: .1rem solid rgba($color: $color-gray_3, $alpha: .1);
+            &:last-child {
+                border: none;
+            }
+            &--price {
+                margin: 4rem 0 0 0;
+                font-size: 3rem;
+                background-color: #F1F1F1;
+                border-radius: 2rem;
+                text-shadow: 2px 1px 4px $color-gray_3;
+            }
+        }
+        // Plane 
+        &__plane {
+            position: absolute;
+            z-index: 2;
+            top: 11rem;
+            right: 44%;
+            font-size: 3rem;
+            color: $color-blue_3;
+            transform: rotate(-90deg);
+            opacity: 0;
+        }
+        // Rocket 
+        &__rocket {
+            position: absolute;
+            z-index: 2;
+            top: 11rem;
+            right: 45%;
+            font-size: 3rem;
+            color: $color-blue_3;
+            transform: rotate(-45deg);
+            opacity: 0;
+        }
+        //Paper Plane
+        &__paper-plane {
+            position: absolute;
+            z-index: 2;
+            top: 11rem;
+            left: 45%;
+            font-size: 3rem;
+            color: $color-blue_3;
+            opacity: 0;
+        }
+        &:hover {
+            .card__plan-title {
+                animation: fade-out .3s ease forwards, fade-in .3s ease 2.3s forwards;
+            }
+            .card__plane {
+                opacity: 1;
+                animation: paper-flying 2s ease .3s forwards;
+            }
+            .card__rocket {
+                opacity: 1;
+                animation: rocket-launch .5s ease-out .8s forwards, rocket-transfer 1.1s linear 1.3s alternate infinite;
+            }
+            .card__paper-plane {
+                opacity: 1;
+                animation: paper-plane-flying ease-out 2.5s .5s forwards;
+            }
+            .card__cloudes {
+                &--plane {
+                    animation: cloude-to-left-right 2s ease-in forwards;
+                }
+                &--rocket {
+                    animation: cloude-to-bottom 1.1s linear .5s infinite;
+                }
+            }
+        }
+    }

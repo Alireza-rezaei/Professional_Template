@@ -121,6 +121,11 @@
     //Body
     &__body {
         padding: 1rem;
+        @media only screen and (max-width: 380px) {
+            & > h2 {
+                font-size: 2rem;
+            }
+        }
     }
     &__details {
         display: flex;

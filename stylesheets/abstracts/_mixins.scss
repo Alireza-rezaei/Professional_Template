@@ -18,3 +18,7 @@
     width: $width + rem;
     height: $height + rem;
 }
+
+@mixin bg-gradient($gradient) {
+    background: linear-gradient($gradient);
+}

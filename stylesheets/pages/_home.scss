@@ -22,3 +22,49 @@
         top: 0;
     }
 }
+
+.plans {
+    position: relative;
+    &__cards {
+        position: relative;
+        @include Flex(center, center);
+        @media only screen and (max-width: 992px) {
+            flex-direction: column;
+        }
+    }
+    &__background {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        @include bg-gradient($purple-gradient);
+        width: 100%;
+        height: 20rem;
+        &::after,
+        &::before {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 100px;
+            background: image("wave-plans.svg");
+            background-size: 100% 100%;
+            background-position-y: top;
+        }
+        &::after {
+            transform: rotate(.5turn);
+        }
+    }
+}
+
+.about {
+    padding: 8rem;
+    background-color: $color-cream_1;
+    clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);
+    text-align: center;
+    &__boxes {
+        @include Flex(space-evenly, center);
+        @media only screen and (max-width: 992px) {
+            flex-direction: column;
+            padding: 10rem;
+        }
+    }
+}

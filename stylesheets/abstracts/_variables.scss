@@ -1,4 +1,11 @@
 $file-path: '../';
+$font-stack: 'sans',
+'Akaya',
+'Font Awesome 5 Pro',
+Verdana,
+Geneva,
+Tahoma,
+sans-serif;
 $color-white: #fff;
 $color-blue_1: #0d62da;
 $color-blue_2: #2196f3;
@@ -11,10 +18,19 @@ $color-gold: goldenrod;
 $color-orange_1:#e76f51;
 $color-orange_2:#d35400;
 $color-orange_3:#993e01;
+$color-orange_4:#F15A24;
 $color-gray_1:#F1F1F1;
 $color-gray_2:#CCCCCC;
 $color-gray_3:#444444;
 $color-gray_4:#999999;
 $color-brown_1: #3c4858;
 $color-red_1: #9f0013;
+$color-red_2: #F70000;
+$color-purple_1: #725fa5;
+$color-cream_1: #fff8ee;
+$pink-gradient:(-45deg, #fd8ba6 0%, #bd88ec 100%);
+$blue-gradient:(-45deg, #85b9dd 0%, #bbd7e9 100%);
+$orange-gradient:(-45deg, #e26f4c 0%, #dcc185 100%);
+$orange-gradient:(-45deg, #e26f4c 0%, #dcc185 100%);
+$purple-gradient:(to right, rgba(196, 136, 229, 0.5), rgba(133, 185, 221, 0.5));
 $cubic-bezier: cubic-bezier(.16, -0.51, .83, 1.47);
