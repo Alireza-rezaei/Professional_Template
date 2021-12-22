@@ -1,0 +1,171 @@
+.masonry {
+    @include Flex(center, center, column);
+    &__box {
+        columns: 4;
+        column-width: 30rem;
+        column-gap: 2rem;
+        &:hover>* {
+            filter: brightness(0.9) blur(2px);
+        }
+    }
+    &__item {
+        position: relative;
+        overflow: hidden;
+        margin: auto auto 1rem auto;
+        border-radius: 4rem;
+        &::before {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(62, 62, 62, 0) 0%, rgba(62, 62, 62, 0.1) 20%, rgba(62, 62, 62, 0.8) 70%, rgba(62, 62, 62, 1) 100%);
+            transform: translateY(50%);
+            transition: all .6s ease;
+        }
+        &:hover {
+            filter: none;
+            .masonry__overlay {
+                transform: translateY(5%);
+                p,
+                i {
+                    opacity: 1;
+                }
+            }
+            &::before {
+                transform: translateY(0);
+            }
+            .masonry__img {
+                transform: translate3d(0, 0, 0);
+            }
+        }
+        @media only screen and(max-width:768px) {
+            margin: 2rem;
+        }
+    }
+    &__overlay {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+        @include Flex(space-evenly, center, column);
+        padding: 1rem;
+        text-align: center;
+        transform: translateY(70%);
+        transition: all 0.5s ease;
+        h3,
+        p,
+        i {
+            color: $color-white;
+        }
+        p {
+            font-size: 1.7rem;
+        }
+        h3,
+        p {
+            pointer-events: none;
+            user-select: none;
+        }
+        p,
+        i {
+            opacity: 0;
+            transition: all .5s ease;
+        }
+    }
+    &__button {
+        i {
+            user-select: none;
+            font-size: 4rem;
+            transition: all 0.3s ease;
+        }
+        i:hover {
+            color: $color-green_3;
+            transform: scale(1.2);
+        }
+    }
+    &__img {
+        display: block;
+        width: calc(100% + 2rem);
+        transition: 0.5s all ease;
+        transform: translate3d(2rem, 0, 0);
+    }
+    &__input {
+        @extend %fade-out;
+    }
+    &>input[id="all"]:checked~.tabs>label[for="all"]>h3,
+    &>input[id="css"]:checked~.tabs>label[for="css"]>h3,
+    &>input[id="php"]:checked~.tabs>label[for="php"]>h3,
+    &>input[id="java"]:checked~.tabs>label[for="java"]>h3 {
+        color: $color-white;
+    }
+    &>input[id="all"]:checked~.tabs>.tabs__label-bg {
+        transform: translateX(-.3rem);
+        @media only screen and (max-width: 576px) {
+            transform: translateY(0) translateX(0);
+        }
+    }
+    &>input[id="css"]:checked~.tabs>.tabs__label-bg {
+        transform: translateX(-12rem);
+        @media only screen and (max-width: 576px) {
+            transform: translateY(5rem) translateX(0);
+        }
+    }
+    &>input[id="php"]:checked~.tabs>.tabs__label-bg {
+        transform: translateX(-24rem);
+        @media only screen and (max-width: 576px) {
+            transform: translateY(10rem) translateX(0);
+        }
+    }
+    &>input[id="java"]:checked~.tabs>.tabs__label-bg {
+        transform: translateX(-35.7rem);
+        @media only screen and (max-width: 576px) {
+            transform: translateY(15rem) translateX(0);
+        }
+    }
+    &>input[id="css"]:checked~.masonry__box>.masonry__item:not([data-lang~="css"]),
+    &>input[id="php"]:checked~.masonry__box>.masonry__item:not([data-lang~="php"]),
+    &>input[id="java"]:checked~.masonry__box>.masonry__item:not([data-lang~="java"]) {
+        @extend %fade-out;
+    }
+}
+
+.tabs {
+    position: relative;
+    @include Flex (center, center);
+    margin: 4rem;
+    background: rgba($color: $color-gray_5, $alpha: .5);
+    color: $color-gray_5;
+    border-radius: 2rem;
+    @media only screen and (max-width: 576px) {
+        flex-direction: column;
+        height: 20rem;
+    }
+    &>label {
+        position: relative;
+        padding: .9rem 0;
+        width: 12rem;
+        text-align: center;
+        transition: all .2s ease;
+        cursor: pointer;
+        &:hover {
+            transform: scale(1.15);
+        }
+    }
+    &__label-bg {
+        position: absolute;
+        @include Flex (center, center);
+        right: 0;
+        width: 12rem;
+        height: 4rem;
+        background-color: $color-gray_5;
+        border-radius: 2rem;
+        transition: all 0.3s cubic-bezier(0.65, -0.01, 0.38, 0.99);
+        @media only screen and (max-width: 576px) {
+            top: 0;
+            height: 5rem;
+        }
+    }
+}

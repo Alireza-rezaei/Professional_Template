@@ -6,7 +6,7 @@
     flex-wrap: wrap;
     &__box {
         flex-grow: 1;
-        @include Box(30, auto);
+        @include Box(30rem, auto);
         padding: 2rem 2rem;
         margin: 2rem;
         background-color: $color-white;
@@ -17,6 +17,9 @@
         &:hover {
             transform: scale(1.07);
         }
+    }
+    &__text {
+        padding: 0 1rem;
     }
     @media only screen and (max-width: 992px) {
         top: 0;
@@ -64,7 +67,14 @@
         @include Flex(space-evenly, center);
         @media only screen and (max-width: 992px) {
             flex-direction: column;
-            padding: 10rem;
+            padding: 0;
         }
     }
+    @media only screen and (max-width: 992px) {
+        padding: 10rem .5rem;
+    }
+}
+
+.contact {
+    position: relative;
 }

@@ -1,0 +1,80 @@
+                    .modal {
+                        position: fixed;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        z-index: 99;
+                        background-color: rgba($color: $color-gray_3, $alpha: .5);
+                        display: flex !important;
+                        @include Flex(center, center);
+                        @extend %fade-out;
+                        &:target {
+                            @extend %fade-in;
+                        }
+                        &__content {
+                            position: relative;
+                            @include Flex(center, center);
+                            padding: 3rem;
+                            width: 100rem;
+                            background-color: $color-white;
+                            box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+                            border-radius: 2rem 0 2rem 2rem;
+                            @media only screen and (max-width: 992px) {
+                                width: 65%;
+                                flex-direction: column;
+                                height: 80rem;
+                            }
+                            @media only screen and (max-width: 768px) {
+                                width: 75%;
+                                flex-direction: column;
+                            }
+                            @media only screen and (max-width: 576px) {
+                                width: 95%;
+                                flex-direction: column;
+                            }
+                        }
+                        &__img {
+                            margin: 3rem 0 0 3rem;
+                            @media only screen and (max-width: 992px) {
+                                margin: 2rem 0 0 0;
+                                max-height: 45rem;
+                            }
+                        }
+                        &__paragraph {
+                            @include Flex (space-evenly, center, column);
+                            height: 60rem;
+                            @media only screen and (max-width: 992px) {
+                                height: auto;
+                            }
+                            &>p {
+                                text-align: justify;
+                                width: 38rem;
+                                font-size: 2rem;
+                                padding: 1rem;
+                                @media only screen and (max-width: 992px) {
+                                    height: 40remrem;
+                                    width: 100%;
+                                    &:nth-child(2) {
+                                        display: none;
+                                    }
+                                }
+                            }
+                        }
+                        &__close {
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            font-size: 3.3rem;
+                            padding: 1rem;
+                            transform: skew(-10deg);
+                            &>svg {
+                                color: #f72e46;
+                                clip-path: circle(63.84% at 52.58% 71.82%);
+                                transition: .3s all ease;
+                                &:hover {
+                                    color: $color-red_1;
+                                }
+                            }
+                        }
+                    }

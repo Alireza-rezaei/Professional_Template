@@ -1,7 +1,7 @@
 .search {
     $parent: &;
     position: relative;
-    @include Box(5);
+    @include Box(5rem);
     @include Flex(center, center);
     border: .3rem solid $color-blue_3;
     border-radius: 5rem;
@@ -9,7 +9,7 @@
     &__form {
         margin-right: auto;
         @include Flex(center, center);
-        @include Box(4);
+        @include Box(4rem);
         border: .1rem solid $color-blue_3;
         border-radius: 50%;
         margin-left: .2rem;

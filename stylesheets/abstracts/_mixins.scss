@@ -15,8 +15,8 @@
 }
 
 @mixin Box($width, $height: $width) {
-    width: $width + rem;
-    height: $height + rem;
+    width: $width;
+    height: $height;
 }
 
 @mixin bg-gradient($gradient) {
