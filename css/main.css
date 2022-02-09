@@ -104,8 +104,16 @@ a:hover {
   }
 }
 
+.white {
+  color: #fff;
+}
+
 .img-fluid {
   width: 100%;
+}
+
+.img-round {
+  border-radius: 50%;
 }
 
 .hidden {
@@ -2520,7 +2528,7 @@ h6 {
   content: "";
   position: absolute;
   left: 0.1rem;
-  top: -0.2rem;
+  top: -0.3rem;
   display: block;
   width: 2rem;
   height: 2.3rem;
@@ -2540,6 +2548,168 @@ h6 {
 .form input[type="checkbox"]:checked::after {
   --opacity: 1;
   --scale: 1;
+}
+
+.pattern {
+  background-image: repeating-linear-gradient(45deg, rgba(217, 123, 147, 0.4) 0 1px, transparent 0 50px), repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.1) 0 1px, transparent 0 50px), -webkit-gradient(linear, left top, left bottom, from(#725fa5), to(#d97b93));
+  background-image: repeating-linear-gradient(45deg, rgba(217, 123, 147, 0.4) 0 1px, transparent 0 50px), repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.1) 0 1px, transparent 0 50px), linear-gradient(to bottom, #725fa5, #d97b93);
+}
+
+.flip {
+  width: 100%;
+  height: 26rem;
+  margin: 0 2rem;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+
+.flip:hover > .flip__card {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.flip__card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform .8s linear;
+  transition: -webkit-transform .8s linear;
+  transition: transform .8s linear;
+  transition: transform .8s linear, -webkit-transform .8s linear;
+}
+
+.flip__main-side, .flip__back-side {
+  position: absolute;
+  inset: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 4rem;
+  border-radius: 5px;
+  background-color: #fff;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.flip__main-side::after, .flip__back-side::after {
+  position: absolute;
+  bottom: -1.5rem;
+  left: 5rem;
+  color: #CCCCCC;
+  font-size: 8rem;
+  font-weight: 900;
+  opacity: .4;
+}
+
+.flip__main-side::after {
+  content: "\f10e";
+}
+
+.flip__back-side {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.flip__back-side::after {
+  content: "\f10d";
+}
+
+@media only screen and (max-width: 992px) {
+  .flip {
+    margin: 2rem auto;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .flip {
+    width: 89%;
+  }
+}
+
+.info {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 1rem;
+}
+
+.info img {
+  border-radius: 50%;
+  margin-left: 1rem;
+}
+
+@media only screen and (max-width: 576px) {
+  .info {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+    margin: 0;
+  }
+  .info img {
+    margin-bottom: 1rem;
+    margin-left: 0;
+  }
+}
+
+.skew {
+  position: relative;
+  width: 100%;
+  height: 26rem;
+  padding: 2rem;
+  margin: 0 2rem;
+}
+
+.skew::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-color: #fff;
+  border-radius: 5px;
+  -webkit-transform: skewX(-4deg);
+          transform: skewX(-4deg);
+  -webkit-transition: .4s transform ease-in-out;
+  transition: .4s transform ease-in-out;
+}
+
+.skew:hover::before {
+  -webkit-transform: skewX(4deg);
+          transform: skewX(4deg);
+}
+
+.skew__wrap {
+  position: relative;
+  z-index: 2;
+}
+
+@media only screen and (max-width: 992px) {
+  .skew {
+    height: auto;
+    margin: 2rem auto;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .skew {
+    width: 89%;
+  }
 }
 
 .nav__lists {
@@ -3060,14 +3230,14 @@ h6 {
           align-items: center;
   width: 50%;
   height: 360px;
-  background: url("../image/rocket-bg.png") no-repeat center bottom;
+  background: url(../../image/rocket-bg.png) no-repeat center bottom;
   background-size: contain;
 }
 
 .header__rocket {
   width: 20%;
   height: inherit;
-  background: url("../image/rocket.png") no-repeat center bottom;
+  background: url(../../image/rocket.png) no-repeat center bottom;
   background-size: 100% auto;
   -webkit-animation: rocket 5s linear 1s infinite;
           animation: rocket 5s linear 1s infinite;
@@ -3124,7 +3294,7 @@ h6 {
           flex-grow: 1;
   width: 30rem;
   height: auto;
-  padding: 2rem 2rem;
+  padding: 1rem 2rem;
   margin: 2rem;
   background-color: #fff;
   -webkit-box-shadow: 0 8px 16px 0 rgba(69, 123, 157, 0.2);
@@ -3141,7 +3311,15 @@ h6 {
 }
 
 .features__text {
-  padding: 0 1rem;
+  padding: 1rem;
+}
+
+.features__text > h2 {
+  white-space: nowrap;
+}
+
+.features__box:first-child .features__text > h2 {
+  margin: 1rem 0 0 0;
 }
 
 @media only screen and (max-width: 992px) {
@@ -3192,7 +3370,7 @@ h6 {
   display: block;
   width: 100%;
   height: 100px;
-  background: url("../image/wave-plans.svg");
+  background: url("../../image/wave-plans.svg");
   background-size: 100% 100%;
   background-position-y: top;
 }
@@ -3240,5 +3418,30 @@ h6 {
 
 .contact {
   position: relative;
+}
+
+.testiamonials {
+  padding: 7rem 1rem;
+}
+
+.testiamonials__boxes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media only screen and (max-width: 992px) {
+  .testiamonials__boxes {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 /*# sourceMappingURL=main.css.map */

@@ -31,13 +31,13 @@
         @include Flex(center, center);
         width: 50%;
         height: 360px;
-        background: image("rocket-bg.png") no-repeat center bottom;
+        background: url(../../image/rocket-bg.png) no-repeat center bottom;
         background-size: contain;
     }
     &__rocket {
         width: 20%;
         height: inherit;
-        background: image("rocket.png") no-repeat center bottom;
+        background: url(../../image/rocket.png) no-repeat center bottom;
         background-size: 100% auto;
         animation: rocket 5s linear 1s infinite;
     }

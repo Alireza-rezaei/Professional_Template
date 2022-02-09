@@ -7,7 +7,7 @@
     &__box {
         flex-grow: 1;
         @include Box(30rem, auto);
-        padding: 2rem 2rem;
+        padding: 1rem 2rem;
         margin: 2rem;
         background-color: $color-white;
         box-shadow: 0 8px 16px 0 rgba($color-blue_3, .2);
@@ -19,7 +19,13 @@
         }
     }
     &__text {
-        padding: 0 1rem;
+        padding: 1rem;
+        &>h2 {
+            white-space: nowrap;
+        }
+    }
+    &__box:first-child .features__text>h2 {
+        margin: 1rem 0 0 0;
     }
     @media only screen and (max-width: 992px) {
         top: 0;
@@ -48,7 +54,7 @@
             display: block;
             width: 100%;
             height: 100px;
-            background: image("wave-plans.svg");
+            background: url("../../image/wave-plans.svg");
             background-size: 100% 100%;
             background-position-y: top;
         }
@@ -64,7 +70,8 @@
     clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);
     text-align: center;
     &__boxes {
-        @include Flex(space-evenly, center);
+        @include Flex(space-evenly,
+        center);
         @media only screen and (max-width: 992px) {
             flex-direction: column;
             padding: 0;
@@ -77,4 +84,15 @@
 
 .contact {
     position: relative;
+}
+
+.testiamonials {
+    padding: 7rem 1rem;
+    &__boxes {
+        @include Flex(space-evenly,
+        center);
+        @media only screen and (max-width: 992px) {
+            flex-direction: column;
+        }
+    }
 }
