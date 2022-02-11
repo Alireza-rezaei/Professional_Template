@@ -36,6 +36,12 @@
         &::after {
             content: "\f10e";
         }
+        @media only screen and (max-width: 370px) {
+            &>p {
+                font-size: 1.6rem;
+                text-align: justify;
+            }
+        }
     }
     &__back-side {
         transform: rotateY(180deg);

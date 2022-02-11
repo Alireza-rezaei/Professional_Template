@@ -23,6 +23,15 @@
         &>h2 {
             white-space: nowrap;
         }
+        @media only screen and (max-width: 370px) {
+            &>h2 {
+                font-size: 2rem;
+                white-space: normal;
+            }
+            &>p {
+                font-size: 1.7rem;
+            }
+        }
     }
     &__box:first-child .features__text>h2 {
         margin: 1rem 0 0 0;
@@ -93,6 +102,19 @@
         center);
         @media only screen and (max-width: 992px) {
             flex-direction: column;
+        }
+    }
+}
+
+.footers {
+    background: url("../../image/background-footer.jpg") center/cover no-repeat;
+    &__copyright {
+        padding: 2rem;
+        text-align: center;
+        color: $color-white;
+        font-size: 1.5rem;
+        & a {
+            color: $color-green-1;
         }
     }
 }
