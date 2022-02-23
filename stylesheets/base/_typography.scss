@@ -18,7 +18,7 @@ h6 {
     color: transparent;
     white-space: nowrap;
     border-left: 1.4rem solid $color-blue_1;
-    animation: typewriting 2s steps(20) 2s 1 normal forwards, typewriting-cursor 1s steps(1) infinite;
+    animation: typewriting 2s steps(20) 4s 1 normal forwards, typewriting-cursor 1s steps(1) infinite;
     @media only screen and (max-width: 992px) {
         font-size: 3.5rem;
     }
